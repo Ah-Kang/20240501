@@ -1,0 +1,43 @@
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  /* ... */
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  color: white; /* 글자 색상 */
+  padding: 10px 20px; /* 버튼 내부 여백 */
+  margin: 5px 0; /* 버튼 간격 */
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  width: 100%; /* 버튼 너비 전체 */
+  /* ... */
+}
+
+.filledButton {
+  background-color: #007bff; /* 채워진 버튼 배경색 */
+  color: white; /* 채워진 버튼 글자 색상 */
+  /* ... */
+}
+
+.textButton {
+  background-color: transparent; /* 텍스트 버튼 배경 투명 */
+  /* ... */
+}
+
+.icon {
+  margin-right: 10px; /* 아이콘 오른쪽 여백 */
+  /* ... */
+}
+
+/* 버튼 호버 효과 */
+.button:hover {
+  background-color: #0056b3; /* 호버 배경색 */
+  color: white; /* 호버 글자 색상 */
+  /* ... */
+}
+
+.space{
+  margin-top: 20px;
+}

@@ -1,0 +1,41 @@
+.button {
+  padding: 10px 20px; /* 상하 패딩 10px, 좌우 패딩 20px */
+  font-size: 16px;     /* 글자 크기를 16px로 고정 */
+  font-weight: 900;
+  width: 100%;         /* 버튼 너비를 부모 컨테이너의 100%로 설정 */
+  box-sizing: border-box; /* border-box 모델을 사용하여 padding과 border가 width에 포함되도록 설정 */
+}
+
+.narrow-margins {
+  margin-left: 130px;  /* 왼쪽 마진 */
+  margin-right: 130px; /* 오른쪽 마진 */
+}
+
+.text-center{
+  font-size: 35px;
+}
+
+.class-Name{
+  font-size: 50px;
+  font-weight: 900;
+
+}
+
+.input{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  
+
+}
+
+.table{
+  margin-top: 20px;
+}
+.attend-code{
+  border-color: rgb(36, 114, 114);
+  border: 3px;
+  margin-bottom: 20px;
+}

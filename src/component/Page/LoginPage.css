@@ -1,0 +1,94 @@
+/* 공통 및 배경 스타일 */
+body {
+  margin: 0;
+  color: black;
+  background: white;
+  font: 600 16px/18px 'Open Sans', sans-serif;
+}
+
+/* 로그인 폼 및 배경 */
+.login-wrap {
+  width: 100%;
+  margin: auto;
+  max-width: 525px;
+  min-height: 670px;
+  position: relative;
+  background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no repeat center;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+}
+
+.login-html {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 90px 70px 50px 70px;
+  background: rgba(40, 57, 101, .9);
+}
+
+/* 입력 필드 스타일 */
+.login-form .group .input {
+  width: 100%;
+  color: #fff;
+  display: block;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, .1);
+}
+
+/* 버튼 스타일 */
+.login-form .group {
+  width: 100%;
+  color: #fff;
+  display: block;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: #1161ee;
+  margin-top: 20px;
+}
+
+.button {
+  width: 100%;
+  color: #fff;
+  display: block;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: #1161ee;
+  margin-top: 20px;
+}
+
+.button:hover{
+  width: 100%;
+  color: #fff;
+  display: block;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: #67ad0c;
+  margin-top: 20px;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Montserrat+Alternates:ital@1&family=Noto+Serif+KR&family=Roboto:wght@400;700&display=swap');
+
+
+.title-1{
+  font-family: "Noto Serif KR", serif;
+  font-weight: 900;
+  font-style: normal;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  
+}
+
+.login{
+  margin-top:  40px;
+  font-weight: 800;
+}
+.icon{
+  font-size: 40px;
+}

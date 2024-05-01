@@ -1,0 +1,63 @@
+/* StudentMainPage.css */
+.section-box {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+ 
+}
+
+.section-title {
+  color: #333;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.welcome-box {
+  text-align: center;
+  margin-bottom: 40px; /* 환영 메시지와 다른 섹션 간의 간격을 더 크게 조정 */
+  font-weight: 900;
+  font-size: 55px;
+}
+
+.main-container {
+  position: relative;
+  display: flex; /* Flexbox 레이아웃 적용 */
+  flex-direction: row; /* 요소들을 수평 방향으로 나열 */
+  align-items: flex-start; /* 세로 방향 정렬 */
+  width: 100%;
+  max-width: 1200px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
+  padding: 20px;
+  box-sizing: border-box;
+  
+}
+
+.sidebar-container {
+  flex: 0 0 320px; /* Sidebar의 너비 고정 */
+  position: absolute;
+  
+ 
+}
+
+.content-container {
+  flex-grow: 1; /* 콘텐츠 영역이 남은 공간을 모두 차지하도록 설정 */
+  padding-left: 20px; /* Sidebar와의 간격 */
+}
+
+.control-button {
+  position: absolute;
+  bottom: 10px; /* 컨테이너 하단에서 10px 위 */
+  right: 10px; /* 컨테이너 오른쪽에서 10px 왼쪽 */
+}
+
+.under-line {
+  cursor: pointer; /* 마우스 오버 시 포인터 모양으로 변경 */
+}
+
+.under-line:hover {
+  text-decoration: underline; /* 마우스 오버 시 밑줄 표시 */
+}
