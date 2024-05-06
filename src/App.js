@@ -14,7 +14,8 @@ import NoticeDetail from './component/Page/NoticeDetail';
 import GenerateNotice from './component/Page/GenerateNotice';
 import MaterialsBoard from './component/Page/MaterialsBoard';
 import MaterialDetail from './component/Page/MaterialDetail'; 
-
+import AddFiles from './component/Page/AddFiles';
+import Statistics from './component/Page/StudentStatistics/Statistics';
 
 
 
@@ -40,6 +41,8 @@ function App() {
 
             <Route path="/materialsBoard" element={<MaterialsBoard />} />
             <Route path="/materials/:id" element={<MaterialDetail />} />
+            <Route path="/AddFiles" element={<AddFiles />} />
+            <Route path="/statistics/*" element={<Statistics />} />
             
 
             

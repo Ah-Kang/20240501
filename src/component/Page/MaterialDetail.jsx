@@ -51,9 +51,9 @@ const MaterialDetail = () => {
       <div>
         {material.files.map((file, index) => (
           <div key={index} style={{ marginBottom: "10px" }}>
-            <a href={file.url} download style={{ marginRight: "10px" }}>
-              Download {file.name}.{file.type}
-            </a>
+            <button className="btn btn-primary" onClick={() => window.location.href = file.url} style={{ marginRight: "10px" }}>
+              다운하기
+            </button>
             <span>{file.name}.{file.type}</span>
           </div>
         ))}
