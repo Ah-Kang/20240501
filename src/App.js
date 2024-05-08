@@ -16,11 +16,19 @@ import MaterialsBoard from './component/Page/MaterialsBoard';
 import MaterialDetail from './component/Page/MaterialDetail'; 
 import AddFiles from './component/Page/AddFiles';
 import Statistics from './component/Page/StudentStatistics/Statistics';
+import LoadFontAwesome from './component/Page/NavBar/LoadFontAwesome';
 
-
+//네비게이션 바 사용시 필요
+import NavigationBar from './component/Page/NavBar/NavigationBar';
+import Sidebar from './component/SideBar/S_SideBar';
 
 function App() {
+
+
   return (
+    <>
+      
+      <LoadFontAwesome/>
     
         <Router>
           <Routes>
@@ -50,7 +58,7 @@ function App() {
           </Routes>
         </Router>
 
-      
+        </>
   );
 }
 

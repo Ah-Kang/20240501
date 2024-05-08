@@ -55,6 +55,11 @@ const Sidebar = ({ width=320, children }) => {
     }
   }
 
+  const closeSidebar = () => {
+    setX(-width); // 사이드바를 왼쪽으로 밀어 닫습니다.
+    setOpen(false); // 열린 상태를 false로 설정합니다.
+  };
+
   useEffect(()=> {
     window.addEventListener('click', handleClose);
     return () => {
@@ -92,11 +97,16 @@ const Sidebar = ({ width=320, children }) => {
 
   return (
     
-    <div className={styles.container}>
-      <div ref={side} className={styles.sidebar} style={{ width: `${width}px`, height: '100%',  transform: `translatex(${-xPosition}px)`}}>
-        <button onClick={toggleMenu} className={styles.button}>
-          {isOpen ? <span>&times;</span> : <FontAwesomeIcon icon={faBars} />}
+    <div className={styles.container} ref={side}>
+      <div  className={styles.navbar} >
+        <FontAwesomeIcon icon={faHome} size="lg" />
+        <span>고객명</span>
+        <button onClick={toggleMenu}>
+          <FontAwesomeIcon icon={faBars} size="lg" />
         </button>
+      </div>
+      <div ref={side} className={styles.sidebar} style={{ width: `${width}px`, height: '100%',  transform: `translateX(${-xPosition}px)`}}>
+        
         
         {/* 여기에 사이드바의 각 버튼들과 아이콘을 추가하세요 */}
         
@@ -104,11 +114,11 @@ const Sidebar = ({ width=320, children }) => {
         
         <div className={styles.inBoxButton}>
           <button onClick={goToMyPage}>
-            <FontAwesomeIcon icon={faUserCircle} className="me-2" />
+            <FontAwesomeIcon icon={faUserCircle} className="me-2 sideBtn" />
             마이페이지
           </button>
           <button onClick={logout}>
-            <FontAwesomeIcon icon={faSignOutAlt} className="me-2" />
+            <FontAwesomeIcon icon={faSignOutAlt} className="me-2 sideBtn" />
             로그아웃
           </button>
         </div>
@@ -119,6 +129,13 @@ const Sidebar = ({ width=320, children }) => {
         <div>
           {renderSidebarButtons()}
         </div>
+
+            {/* 닫기 버튼 추가 */}
+          <button onClick={closeSidebar} className={styles.closeButton}>
+            <FontAwesomeIcon icon={faSignOutAlt} />
+            닫기 {/* 닫기 아이콘으로 변경 필요 */}
+          </button>
+
       </div>
     </div>
   );
