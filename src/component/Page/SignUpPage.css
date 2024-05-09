@@ -1,0 +1,39 @@
+/* 공통 입력 필드 스타일 */
+.form-control, .btn {
+  height: 38px;  /* 표준 높이 설정 */
+  padding: 6px 12px; /* 패딩 조정 */
+  font-size: 14px; /* 폰트 크기 일치 */
+  line-height: 1.42857143; /* 라인 높이 조정 */
+  border: 1px solid #ccc; /* 보더 통일 */
+  border-radius: 4px; /* 모서리 둥글게 */
+}
+
+.num-btn {
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  min-width: 250px; /* 최소 너비 설정 */
+  min-height: 38px; /* 최소 높이 설정 */
+}
+
+.numInput {
+  flex-grow: 1;
+  border-radius: 4px 0 0 4px; /* 왼쪽 모서리만 둥글게 */
+  border-right: none; /* 오른쪽 보더 제거 */
+}
+
+.btnVerification {
+  border-radius: 0 4px 4px 0; /* 오른쪽 모서리만 둥글게 */
+  background-color: #007bff;
+  color: white;
+  min-width: 100px; /* 버튼 최소 너비 */
+}
+
+/* 화면 크기에 따른 조정 */
+@media (max-width: 768px) {
+  .num-btn {
+    min-width: 100%; /* 화면이 작을 때는 너비를 100%로 조정 */
+  }
+  .btnVerification {
+    padding: 0 10px; /* 작은 화면에서는 버튼 패딩 조정 */
+  }
+}

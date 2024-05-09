@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import axiosInstance from '../../api/axios';
+import Sidebar from '../SideBar/S_SideBar';
 
 const NoticeDetail = () => {
   const { id } = useParams();
   const [notice, setNotice] = useState(null);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const goToNoticeBoardPage =()=>{
+    navigate('../NoticeBoardPage');
+  };      
+  const userName = 'kangsan'
 
 //// 원래 NoticeBoardPage에서 받아와야하는디 안 받아와짐 그래서 여기에다가 mock데이터를 만들어서 출력하니 됐는데 1일 낮에 해봤을 땐 이래 안 해도 됐거덩 우예 해야하노...
 /// const response = await axiosInstance.get('https://api.yourdomain.com/notices'); => 이거 axiosInstance넣어야 가짜 데이터 적용
@@ -39,9 +45,11 @@ const NoticeDetail = () => {
       }
       
     };
+    
 
     fetchNotice();
   }, [id]);
+  
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -52,11 +60,24 @@ const NoticeDetail = () => {
   }
 
   return (
-    <div className="container mt-5">
-      <h1>{notice.title}</h1>
-      <h2 style={{ fontSize: '1.5em', color: 'gray' }}>{notice.date}</h2>
-      <p>{notice.content}</p>
-    </div>
+    <div>
+      <div className="sidebar-container">
+        <Sidebar width={320} />
+      </div>
+
+    <div className="notice-detail-container">
+      <h1 className="notice-title">{notice.title}</h1>
+      <div className='notice-name'>
+        <h2>{userName}</h2>
+        <h2 className="notice-date"> 작성일 {notice.date}</h2>
+      </div>
+      <p className="notice-content">{notice.content}</p>
+      <div className='notice-btn-div'>
+        <button className="notice-back-button" onClick={goToNoticeBoardPage}>목록</button>
+      </div>
+  </div>
+  </div>
+    
   );
 };
 

@@ -12,7 +12,7 @@ import SidebarButtons3 from "./SideBarButtons3";
 import SidebarButtons4 from "./SideBarButtons4";
 
 
-import { faHome, faChartLine, faShoppingCart, faBoxOpen, faUserFriends, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faChartLine, faShoppingCart, faBoxOpen, faUserFriends, faSignOutAlt, faUserCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 // 기타 필요한 아이콘 import
 
 import { useParams } from 'react-router-dom';
@@ -22,10 +22,12 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const Sidebar = ({ width=320, children }) => {
+const Sidebar = ({ width=320, children,pageTitle }) => {
   const [isOpen, setOpen] = useState(false);
   const [xPosition, setX] = useState(-width);
   const side = useRef();
+
+  const [user, setUser] = useState("학생") // 사이드바 상단에 나타낼 유저 네임(api로 사용자 정보 받아와서 사용자 이름 띄우기
 
   const navigate = useNavigate();
 
@@ -54,6 +56,11 @@ const Sidebar = ({ width=320, children }) => {
       await setOpen(false);
     }
   }
+
+  const closeSidebar = () => {
+    setX(-width); // 사이드바를 왼쪽으로 밀어 닫습니다.
+    setOpen(false); // 열린 상태를 false로 설정합니다.
+  };
 
   useEffect(()=> {
     window.addEventListener('click', handleClose);
@@ -92,33 +99,57 @@ const Sidebar = ({ width=320, children }) => {
 
   return (
     
-    <div className={styles.container}>
-      <div ref={side} className={styles.sidebar} style={{ width: `${width}px`, height: '100%',  transform: `translatex(${-xPosition}px)`}}>
-        <button onClick={toggleMenu} className={styles.button}>
-          {isOpen ? <span>&times;</span> : <FontAwesomeIcon icon={faBars} />}
+    <div className={styles.container} ref={side}>
+      <div  className={styles.navbar} >
+        <button>
+        <FontAwesomeIcon icon={faHome} size="lg" />
         </button>
+        <span>{pageTitle}</span>
+        <button onClick={toggleMenu}>
+          <FontAwesomeIcon icon={faBars} size="lg" />
+        </button>
+      </div>
+      <div ref={side} className={styles.sidebar} style={{ width: `${width}px`, height: '100%',  transform: `translateX(${-xPosition}px)`}}>
+        
         
         {/* 여기에 사이드바의 각 버튼들과 아이콘을 추가하세요 */}
         
         {/* ... 기타 메뉴 아이템 ... */}
-        
+
+
+          <div className={styles.topPage}>
+            <span className={styles.userName}>{user}님</span>
+            <button onClick={closeSidebar} className={styles.exitBtn}>
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+           
+          </div>
+
+          
         <div className={styles.inBoxButton}>
+          
           <button onClick={goToMyPage}>
-            <FontAwesomeIcon icon={faUserCircle} className="me-2" />
+            <FontAwesomeIcon icon={faUserCircle} className="me-2 sideBtn" />
             마이페이지
           </button>
+
           <button onClick={logout}>
-            <FontAwesomeIcon icon={faSignOutAlt} className="me-2" />
+            <FontAwesomeIcon icon={faSignOutAlt} className="me-2 sideBtn" />
             로그아웃
           </button>
         </div>
-        <div>
-        
-        </div>
+       
 
         <div>
           {renderSidebarButtons()}
         </div>
+
+           
+          {/* <button onClick={closeSidebar} className={styles.closeButton}>
+            <FontAwesomeIcon icon={faSignOutAlt} />
+            닫기 
+          </button> */}
+
       </div>
     </div>
   );

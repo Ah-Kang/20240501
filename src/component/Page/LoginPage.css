@@ -1,9 +1,10 @@
-/* 공통 및 배경 스타일 */
+공통 및 배경 스타일
 body {
   margin: 0;
   color: black;
   background: white;
   font: 600 16px/18px 'Open Sans', sans-serif;
+  
 }
 
 /* 로그인 폼 및 배경 */
@@ -48,28 +49,6 @@ body {
   margin-top: 20px;
 }
 
-.button {
-  width: 100%;
-  color: #fff;
-  display: block;
-  border: none;
-  padding: 15px 20px;
-  border-radius: 25px;
-  background: #1161ee;
-  margin-top: 20px;
-}
-
-.button:hover{
-  width: 100%;
-  color: #fff;
-  display: block;
-  border: none;
-  padding: 15px 20px;
-  border-radius: 25px;
-  background: #67ad0c;
-  margin-top: 20px;
-}
-
 
 
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Montserrat+Alternates:ital@1&family=Noto+Serif+KR&family=Roboto:wght@400;700&display=swap');
@@ -81,7 +60,7 @@ body {
   font-style: normal;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
   
 }
 
@@ -91,4 +70,150 @@ body {
 }
 .icon{
   font-size: 40px;
+}
+
+
+/* 버튼 기본 스타일 설정 */
+.btn {
+  border: none; /* 테두리 제거 */
+  box-shadow: none; /* 기본 그림자 제거 */
+}
+
+/* 로그인 버튼 스타일 */
+.btn-primary {
+  background-color:#f6f6f6;
+  color: #cdcdcd;
+}
+
+.btn-primary:hover {
+  background-color: #7879f1;
+  color: #fff;
+}
+
+/* 회원가입 버튼 스타일 */
+.btn-secondary {
+  background-color: #f3f5ff;
+  color: #7879f1
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+.title{
+  border-bottom: #545b62;
+}
+
+
+
+
+/* 아래는 회원가입 페이지 css */
+
+.num-btn {
+  display: flex; /* 요소를 가로로 나란히 배치 */
+  border: none; /* 컨테이너에 경계를 추가 */
+   /* 둥근 모서리 효과 */
+  min-width: 250px; /* 최소 너비 설정 */
+  height: 40px;
+}
+
+.numInput {
+  flex-grow: 1; /* 입력 필드가 가능한 많은 공간을 차지하도록 설정 */
+  border-radius: 0; /* 입력 필드의 둥근 모서리 제거 */
+  margin-right: -1px; /* 버튼과의 경계를 없애기 위한 마진 조정 */
+  border: 1px solid #e3dddd; /* 경계 제거 */
+  border-radius: 6px;
+  border-top-right-radius: 0px; /* 오른쪽 상단 둥근 모서리 */
+  border-bottom-right-radius: 0px;
+
+ 
+  
+}
+
+.btnVerification {
+  border-top-right-radius: 5px; /* 오른쪽 상단 둥근 모서리 */
+  border-bottom-right-radius: 5px; /* 오른쪽 하단 둥근 모서리 */
+  border-top-left-radius:0px ;
+  border-bottom-left-radius:0px ;
+  border: none; /* 버튼의 경계 제거 */
+  background-color: #007bff; /* 배경색 */
+  color: white; /* 글자색 */
+  min-width: 115px;
+  font-size: 17px;
+  white-space: nowrap;
+ 
+  
+}
+.btnVerification2 {
+  border-top-right-radius: 5px; /* 오른쪽 상단 둥근 모서리 */
+  border-bottom-right-radius: 5px; /* 오른쪽 하단 둥근 모서리 */
+  border-top-left-radius:0px ;
+  border-bottom-left-radius:0px ;
+  border: none; /* 버튼의 경계 제거 */
+  background-color: #737373; /* 배경색 */
+  color: white; /* 글자색 */
+  min-width: 115px;
+  font-size: 17px;
+  white-space: nowrap;
+ 
+  
+}
+
+/* 라디오 버튼 css */
+
+.role-selector {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15px; /* 라벨 간 간격 조정 */
+  min-width: 100px; /* 최소 너비 설정 */
+  padding: 10px; /* 내부 패딩 */
+  white-space: nowrap; /* 텍스트를 한 줄에 표시 */
+}
+.form-check-label {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15px; /* 라벨 간 간격 조정 */
+  
+}
+
+
+.radio-button {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #adadad;
+  border:none;
+  margin-right: 10px; /* 텍스트와의 간격 */
+  display: inline-block;
+}
+
+.form-check-input:checked + .form-check-label .radio-button {
+  background-color: #fff;
+  border: 6px solid #007bff;
+
+}
+
+.form-check-label {
+  font-size: 16px; /* 라벨 폰트 크기 조정 */
+}
+
+/* 라디오 버튼과 라벨에 대한 추가 스타일링 */
+.form-check-input {
+  display: none; /* 기본 라디오 버튼 숨김 */
+}
+
+.form-check-inline{
+  border: 2px solid #e3dddd;
+  border-radius: 6px;
+  padding: 10px;
+  padding-left: 50px;
+  padding-right:50px ;
+}
+
+.btnSign{
+  margin-bottom: 30px;
 }
