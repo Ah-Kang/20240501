@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Sidebar from '../SideBar/S_SideBar';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS를 임포트합니다.
 import './MainPage.css';
+import NavigationBar from './NavBar/NavigationBar';
 
 
 
@@ -19,6 +20,10 @@ const CoursePage = () => {
   };
 
   return (
+    <>
+    
+      <NavigationBar barName={courseName}/>
+    
     <div className="main-container p-4 shadow bg-white rounded">
       <Sidebar width={320} /> {/* 사이드바를 포함하고 있습니다. */}
 
@@ -50,6 +55,7 @@ const CoursePage = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 

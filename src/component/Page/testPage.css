@@ -1,0 +1,149 @@
+body {
+  min-width: 400px;  /* 최소 너비 설정 */
+
+}
+
+
+/* StudentMainPage.css */
+.page-container {
+  width: 100%;
+  
+  margin: 0 auto;
+  margin-top: 45px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fbfbfe;
+  padding: 20px;
+  max-width: 500px;
+}
+
+.sidebar-container {
+  width: 320px; /* 사이드바 너비 고정 */
+}
+
+.greeting-header h1 {
+  text-align: left;
+  color: #2c3e50;
+  margin-bottom: 80px;
+  margin-left: 10px;
+}
+
+.section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  margin-bottom: 60px;
+  padding: 15px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.section-header h2 {
+  color: #333;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.list-group {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.date {
+  font-size: 14px;
+  color: #999;
+}
+a {
+  color: #7879f1;
+  text-decoration: none;
+  font-size: 15px;
+}
+h1{
+  font-weight: bold;
+}
+
+.userName{
+  color: #7879f1;
+}
+.vertical-bar{
+  color: #7879f1;
+  margin-right: 6px;
+}
+
+/* 과제 섹션 css */
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 80px;
+}
+
+.assignment-card {
+  flex: none;
+  width: 140px; /* 너비 조정 */
+  height: 110px; /* 높이 조정 */
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.assignment-card.light-red { background-color: #fff3f3; }
+.assignment-card.light-green { background-color: #f1fbf4; }
+.assignment-card.light-blue { background-color: #f3f5ff; }
+
+.assignment-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.details {
+  font-size: 12px;
+  color: #666;
+  display: flex;
+  padding-right: 40px;
+}
+
+.due-date{
+  color:rgb(120, 121, 241);
+  font-weight: bold;
+}
+.title, .details span {
+  
+  overflow: hidden; /* 내용이 넘칠 경우 숨김 */
+  text-overflow: ellipsis; /* 넘친 텍스트를 '...'으로 처리 */
+  width: 100%; /* 너비 제한 (부모 컨테이너에 따라 조정 가능) */
+}
+.assign-length{
+  color: rgb(255, 105, 105);
+}
