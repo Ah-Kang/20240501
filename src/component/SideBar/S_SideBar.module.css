@@ -12,8 +12,33 @@
   transition: 0.4s ease;
   color: #202020;
   height: 100%;
-  z-index: 99;
+  z-index: 99; 
+  overflow-y: auto; 
+  /* 이걸로 맨 앞 겹으로 나오게 할 수 있나 */
+  
 }
+
+
+
+/* 커스텀 스크롤바 스타일 */
+.sidebar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #7b52db;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 버튼 스타일 */
+
 .button {
   position: absolute;
   left: -100px;
@@ -27,28 +52,25 @@
   overflow: hidden;
   background-color: #007bff; /* 버튼 배경색을 부트스트랩 기본 'primary' 색상으로 설정 */
   color: white;
-  margin-bottom: 10px;
+}
 
-  
 
-}
-.openBtn {
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.content {
-  padding: 40px 40px 0 20px;
-  position: relative;
-  width: 100%;
-}
+
 .icon {
-  margin: 0;
-  color: #202020;
+ 
+  pointer-events: auto;
 }
 
+.inBoxButton{
+  display: flex;
+  justify-content: space-between; /* 버튼 사이에 공간을 동일하게 분배 */
+  align-items: center; /* 버튼들을 상하 중앙으로 정렬 */
+  padding: 10px; /* 필요에 따라 패딩 조정 */
+  border-bottom: 3px rgb(218, 18, 18);
+  padding-bottom: 8px;
+}
 .inBoxButton button {
-  margin-left: 20px;
+  margin-left: 2px;
   border-radius: 5px;
   background-color: transparent; /* 배경색을 투명하게 설정 */
   color: rgb(255, 255, 255); /* 글씨 색 설정 */
@@ -58,6 +80,8 @@
   padding: 10px 20px; /* 내부 여백 설정 */
   cursor: pointer; /* 마우스 오버 시 커서 변경 */
   transition: background-color 0.3s ease; /* 배경색 변경 애니메이션 */
+  
+  
 }
 
 .inBoxButton button:last-child {
@@ -68,6 +92,8 @@
   background-color: #0a58ca /* 호버 시 배경색 변경 */
 }
 
+
+/* 이거 쓸모 있는건지 모르겠음 */
 .navbar-custom {
   background-color: #add8e6; /* 연한 파란색 */
   color: white;
@@ -81,5 +107,74 @@
 .navbar-custom .navbar-toggler {
   color: white;
   border-color: white; /* 토글 버튼의 테두리도 흰색으로 설정 */
+}
+
+.fa-icon {
+  pointer-events: auto; /* 이벤트가 아이콘에도 적용되도록 설정 */
+  margin: 5px
+}
+/* 여기까지 */
+
+
+.topPage{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  margin-bottom: 5px;
+}
+.userName{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.exitBtn{
+  background: none;
+  border: none;
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+
+/* 네비게이션바 */
+/* S_SideBar.module.css 추가 스타일 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff; /* 배경색 지정 */
+  border-bottom: 1px solid #ccc; /* 하단 테두리 */
+  z-index: 98; /* 다른 요소 위에 나타나도록 설정 */
+}
+
+.navbar span {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton {
+  position: absolute; /* 절대 위치 설정 */
+  bottom: 10px; /* 하단에서 10px의 위치 */
+  right: 10px; /* 오른쪽에서 10px의 위치 */
+  border: none; /* 테두리 없음 */
+  background: none; /* 배경색 없음 */
+  cursor: pointer; /* 커서 포인터 */
+  font-size: 24px; /* 아이콘 크기 */
+}
+
+.closeButton:hover {
+  opacity: 0.8; /* 호버 효과 */
 }
 

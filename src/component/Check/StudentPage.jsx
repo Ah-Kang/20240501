@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Form, Table, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS를 임포트합니다.
-import './TP.css'
+import './SP.css'
 import Sidebar from '../SideBar/S_SideBar';
 
 function StudentPage({ courseName }) {
   const [attendanceCode, setAttendanceCode] = useState('');
-
+  const pageName = '출석';
   const handleInputChange = (event) => {
     setAttendanceCode(event.target.value);
   };
@@ -25,41 +25,49 @@ function StudentPage({ courseName }) {
   ];
 
   return (
-    <div className='container mt-5 p-4 shadow bg-white rounded'>
+    <div className='background mt-5 p-4 '>
+      
       <div className='sidebar-container'>
-        <Sidebar width={320} />
+        <Sidebar width={320} pageTitle={courseName} />
+        {/* pageTitle에 변수를 줘서 하는게 나은가 아님 그냥 직접 입력 하는게 나은가 */}
       </div>
-    <Container>
-      <Row className="justify-content-center">
-        <Col md={6}>
-          <h1 className="text-center mb-4 class-Name">과목명 : {courseName}</h1>
-          <Form className='p-4 shadow bg-white rounded'>
-            <Form.Group as={Row} className="mb-3 narrow-margins">
-              <Col xs={12}>
-                <Form.Control
-                  className='input'
-                  type="text"
-                  placeholder="출석 코드를 입력하세요."
-                  value={attendanceCode}
-                  onChange={handleInputChange}
-                />
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row} className='narrow-margins'>
-              <Col xs={12}>
-                <Button className='button ' variant="primary" size="lg" onClick={handleSubmit} block>출석 하기</Button>
-              </Col>
-            </Form.Group>
-          </Form>
-          <div className='p-4 shadow bg-white rounded table'>
-          <Table striped bordered hover>
-            <thead className='table'>
-              <tr>
+      <Container>
+        <Row className="justify-content-center">
+          <Col md={6}>
+
+          <h2 className='attendance-title'><span className='vertical-bar'>❙</span>  출석체크</h2>
+          <Form className="attendance-form">
+          <Form.Group as={Row} className="mb-3">
+            <Col xs={12}>
+              <Form.Control
+                className="input-field"
+                type="text"
+                placeholder="출석코드를 입력하세요"
+                value={attendanceCode}
+                onChange={handleInputChange}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Col xs={12}>
+              <Button className="submit-button" variant="primary" size="lg" block onClick={handleSubmit}>
+                출석 하기
+              </Button>
+            </Col>
+          </Form.Group>
+        </Form>
+
+
+          <h2 className='attendance-title'><span className='vertical-bar'>❙</span>  출석 현황</h2>
+          
+          <Table hover className="table-sp">
+            <thead >
+              <tr className='table-attendance'>
                 <th>차시</th>
-                <th>출결 여부</th>
+                <th>출결여부</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className='table-data'>
               {attendanceData.map((session, index) => (
                 <tr key={index}>
                   <td>Session {session.session}</td>
@@ -70,11 +78,13 @@ function StudentPage({ courseName }) {
               ))}
             </tbody>
           </Table>
-          </div>
+
+          
         </Col>
       </Row>
     </Container>
     </div>
+    
   );
 }
 

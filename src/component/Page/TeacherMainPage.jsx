@@ -44,6 +44,24 @@ const TeacherMainPage = () => {
   };
 
   return (
+    <>
+      {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+      <nav className="navbar">
+        <div className="nav-icon">
+          <i className="fas fa-home"></i>
+        </div>
+        <div className="nav-title">{userName}</div>
+        <div className="nav-menu" >
+          
+          <button className="fas fa-bars" >
+
+          </button>
+          
+        </div>
+      </nav> */}
+
+
+
     <div className='main-container p-4 shadow bg-white rounded'>
       <div className='sidebar-container'>
         <Sidebar width={320} />
@@ -81,6 +99,7 @@ const TeacherMainPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

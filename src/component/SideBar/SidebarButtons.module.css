@@ -16,7 +16,7 @@
 }
 
 .filledButton {
-  background-color: #007bff; /* 채워진 버튼 배경색 */
+  background-color: rgb(73, 73, 73); /* 채워진 버튼 배경색 */
   color: white; /* 채워진 버튼 글자 색상 */
   /* ... */
 }
@@ -35,9 +35,17 @@
 .button:hover {
   background-color: #0056b3; /* 호버 배경색 */
   color: white; /* 호버 글자 색상 */
+
   /* ... */
 }
 
 .space{
   margin-top: 20px;
+}
+
+.just{
+  border-bottom: 2px white;
+}
+.just button{
+  border-radius: 5px;
 }

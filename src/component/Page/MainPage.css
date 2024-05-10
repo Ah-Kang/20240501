@@ -2,7 +2,7 @@
 .section-box {
   background: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
   margin: 20px;
   padding: 20px;
  
@@ -14,13 +14,38 @@
   font-weight: bold;
   margin-top: 30px;
   margin-bottom: 20px;
+  justify-content: space-between;
+  display: flex;
 }
 
+.section-list{
+  background: #ffffff;
+  border-radius: 8px;
+  border: 2px black;
+  
+}
+.moreBtn{
+  border: none;
+  background-color: white;
+  color: blue;
+  font-size: 20px;
+}
+.moreBtn:hover{
+  border: none;
+  background-color: white;
+  color: rgb(90, 90, 230);
+  font-size: 20px;
+}
+.arrow{
+  color: grey;
+}
+
+/* 여기까지 페이지 디자인  */
 .welcome-box {
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px; /* 환영 메시지와 다른 섹션 간의 간격을 더 크게 조정 */
   font-weight: 900;
-  font-size: 55px;
+  font-size: 40px;
 }
 
 .main-container {
@@ -60,4 +85,25 @@
 
 .under-line:hover {
   text-decoration: underline; /* 마우스 오버 시 밑줄 표시 */
+}
+
+  /* 네비게이션바 */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-icon i, .nav-menu i {
+  font-size: 24px; /* 아이콘 크기 조정 */
+  cursor: pointer;
+}
+
+.nav-title {
+  font-size: 16px;
+  font-weight: bold;
 }
