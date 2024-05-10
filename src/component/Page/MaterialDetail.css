@@ -1,0 +1,38 @@
+
+.container-files {
+  max-width: 600px;
+  margin-top: 80px;
+}
+
+
+.file-icon {
+  
+  color: #a0a0a0;
+  margin-bottom: 5px;
+}
+.material-down2{
+  background-color: rgb(243, 245, 255);
+  padding: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 7px;
+}
+.material-down-btn{
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.material-name{
+  display: flex;
+  border-bottom: 3px grey;
+  align-items: center; /* 수직 중앙 정렬 */
+  border-bottom:2px solid rgb(246, 246, 246) ;
+}
+.material-name h2{
+  font-size: 16px;
+  margin-right: 10px;
+}

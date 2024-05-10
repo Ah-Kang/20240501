@@ -12,8 +12,9 @@ const SidebarButtons4 = () => {
   const goToAttendance = () => navigate('../TeacherPage');
   const goToQuestion = () =>alert('준비 중입니다.')
   const goToAnnounce = () =>navigate('../NoticeBoardPage');
+  const goToStatistics = () =>navigate('../Statistics')
+  const goToMaterials = () =>navigate('../MaterialsBoard')
   const goToAssignment = () =>alert('준비 중입니다.')
-  const goToMaterials = () =>alert('준비 중입니다.')
   const goToStudyPlan = () =>alert('준비 중입니다.')
   const goToSurvey = () =>alert('준비 중입니다.')
   const goToStudentManagement = () =>alert('준비 중입니다.')
@@ -28,8 +29,9 @@ const SidebarButtons4 = () => {
       <button onClick={goToAttendance} className={`${styles.button} ${styles.textButton}`}>출석</button>
       <button onClick={goToQuestion} className={`${styles.button} ${styles.textButton}`}>질문게시판</button>
       <button onClick={goToAnnounce} className={`${styles.button} ${styles.textButton}`}>공지사항</button>
+      <button onClick={goToMaterials} className={`${styles.button} ${styles.textButton}`}>강의자료</button>
+      <button onClick={goToStatistics} className={`${styles.button} ${styles.textButton}`}>학생통계</button>
       <button onClick={goToAssignment} className={`${styles.button} ${styles.textButton}`}>과제</button>
-      <button onClick={goToMaterials} className={`${styles.button} ${styles.textButton}`}>수업자료</button>
       <button onClick={goToStudyPlan} className={`${styles.button} ${styles.textButton}`}>강좌 계획서</button>
       <button onClick={goToSurvey} className={`${styles.button} ${styles.textButton}`}>설문</button>
       <button onClick={goToStudentManagement} className={`${styles.button} ${styles.textButton}`}>학생 관리</button>

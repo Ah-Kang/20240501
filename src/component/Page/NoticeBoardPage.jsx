@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import axiosInstance from '../../api/axios';
+import Sidebar from '../SideBar/S_SideBar';
+import './NoticeBoard.css';
 
 //package.jason에 "proxy": "https://api.yourdomain.com" 설정을 넣어둠 cors오류 때문에 넣은건데 해결 된진 모르겠으나 페이지가 동작, api실 주소 적용할 때 저 주소도 바꿔줘야함
 
@@ -48,34 +50,48 @@ const NoticeBoard = ({ courseName }) => {
     };
 
   return (
-    <div className="container mt-5">
-      <h1>공지사항</h1>
-      <h2 style={{ fontSize: '1.5em', color: 'gray' }}>{courseName}</h2>
-      {userStatus.isLoggedIn && userStatus.role === 'teacher' && (
-        <button onClick={() => navigate('/new-notice')} className="btn btn-primary">
-          글쓰기
-        </button>
-      )}
-      <table className="table table-hover">
-        <thead>
-          <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>내용</th>
-            <th>날짜</th>
-          </tr>
-        </thead>
-        <tbody>
-          {notices.map(({ id, title, content, date }) => (
-            <tr key={id} onClick={() => handleRowClick(id)}>
-              <td>{id}</td>
-              <td>{title}</td>
-              <td>{truncateContent(content)}</td>
-              <td>{date}</td>
+    <div className="notice-board-container">
+      <div className="sidebar-container">
+        <Sidebar width={320} />
+      </div>
+      
+      <div className='notice-title'>
+        <div>
+          <h1><span className='vertical-bar'>❙</span>공지사항</h1>
+          <h2 style={{ fontSize: '1.5em', color: 'gray' }}>{courseName}</h2>
+        </div>
+        <div className='notice-btn-div'>
+          {userStatus.isLoggedIn && userStatus.role === 'teacher' && (
+            <button onClick={() => navigate('/new-notice')} className="notice-btn notice-btn-primary"> 
+              +글쓰기
+            </button>
+            // 클래스네임 다시 지정해야할수도
+          )}
+        </div>
+      </div>
+      <div className='notice-table'>
+        <table className=" table-hover">
+          <thead className='table-first-line'>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>내용</th>
+              <th>날짜</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {notices.map(({ id, title, content, date }) => (
+              <tr key={id} onClick={() => handleRowClick(id)}>
+                <td>{id}</td>
+                <td>{title}</td>
+                <td>{truncateContent(content)}</td>
+                <td>{date}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    
     </div>
   );
 };
