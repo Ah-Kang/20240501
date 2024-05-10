@@ -1,0 +1,90 @@
+
+.container-files1 {
+  width: 100%;
+  
+  margin: 0 auto;
+  margin-top: 45px;
+  font-family: 'Arial', sans-serif;
+  
+  padding: 20px;
+  max-width: 500px;
+}
+
+
+.file-icon {
+  
+  color: #a0a0a0;
+  margin-bottom: 5px;
+}
+.material-down1{
+  background-color: rgb(243, 245, 255);
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 9px;
+}
+.material-down2{
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  text-align: center;
+  border-radius: 9px;
+}
+.material-down3{
+  align-items: center;
+  display: flex;
+}
+
+.material-down-btn{
+  border: none;
+  border-radius: 5px;
+  padding: 5px 16px 5px 16px;
+  background-color: rgb(86, 86, 86);
+  color: white;
+  align-items: center;
+}
+.material-down-btn:hover{
+  background-color: rgb(120, 117, 117);
+}
+
+.material-name{
+  display: flex;
+  border-bottom: 3px grey;
+  align-items: center; /* 수직 중앙 정렬 */
+  border-bottom:2px solid rgb(246, 246, 246) ;
+}
+.material-name h2{
+  font-size: 16px;
+  margin-right: 10px;
+}
+.file-icon-material{
+  font-size: 25px;
+  color: gray;
+  
+  margin-right: 8px;
+}
+
+/* 목록버튼 */
+.material-btn-div{
+  display: flex;
+  justify-content: right;
+  border: 1px rgb(0, 0, 0); 
+}
+
+.material-back-button {
+  padding: 4px 12px 4px 12px; /* 버튼 패딩 */
+  
+  background-color: #ffffff; /* 버튼 배경 색상 */
+  color: gray; /* 버튼 글자 색상 */
+  border-radius: 5px; /* 버튼 모서리 둥글게 */
+  border: 1px solid grey; 
+  cursor: pointer; /* 포인터 커서 */
+}
+
+.material-back-button:hover {
+  background-color: #dfdfdf; /* 호버 시 배경 색상 변경 */
+}

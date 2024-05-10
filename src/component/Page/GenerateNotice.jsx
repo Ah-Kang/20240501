@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './NoticeBoardPage'
+import Sidebar from '../SideBar/S_SideBar';
 
 const GenerateNotice = () => {
   const [title, setTitle] = useState('');
@@ -60,8 +62,12 @@ const GenerateNotice = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h1>새 공지사항 작성</h1>
+    <div className="generate-notice-container">
+      <div className="sidebar-container">
+        <Sidebar width={320} />
+      </div>
+      <h1><span className='vertical-bar'>❙</span>새 공지사항 작성</h1>
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="title">제목</label>
@@ -69,6 +75,7 @@ const GenerateNotice = () => {
             type="text"
             className="form-control"
             id="title"
+            placeholder="제목을 입력하세요"
             value={title}
             onChange={e => setTitle(e.target.value)}
             required
@@ -79,33 +86,34 @@ const GenerateNotice = () => {
           <textarea
             className="form-control"
             id="content"
+            placeholder="내용을 입력하세요"
             rows="5"
             value={content}
             onChange={e => setContent(e.target.value)}
             required
           />
         </div>
-        <div className="form-check">
+        <div className="radio-check">
           <input
             type="checkbox"
-            className="form-check-input"
+            className="radio-check-input"
             id="sendToStudent"
             checked={sendMessageTo.student}
             onChange={() => handleCheckboxChange('student')}
           />
-          <label className="form-check-label" htmlFor="sendToStudent">학생에게 문자 보내기</label>
+          <label className="radio-check-label" htmlFor="sendToStudent">학생에게 문자 보내기</label>
         </div>
-        <div className="form-check">
+        <div className="radio-check">
           <input
             type="checkbox"
-            className="form-check-input"
+            className="radio-check-input"
             id="sendToParent"
             checked={sendMessageTo.parent}
             onChange={() => handleCheckboxChange('parent')}
           />
-          <label className="form-check-label" htmlFor="sendToParent">부모님에게 문자 보내기</label>
+          <label className="radio-check-label" htmlFor="sendToParent">부모님에게 문자 보내기</label>
         </div>
-        <button type="submit" className="btn btn-primary">게시하기</button>
+        <button type="submit" className="generate-notice-button">게시하기</button>
       </form>
     </div>
   );
